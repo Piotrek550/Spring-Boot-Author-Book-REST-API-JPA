@@ -1,4 +1,4 @@
-package com.devtiro.database.dao.impl;
+package com.devtiro.database;
 
 import com.devtiro.database.domain.Author;
 import com.devtiro.database.domain.Book;
