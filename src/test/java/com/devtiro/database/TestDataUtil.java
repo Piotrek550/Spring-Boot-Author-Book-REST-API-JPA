@@ -1,12 +1,14 @@
 package com.devtiro.database;
 
+import com.devtiro.database.domain.dto.AuthorDto;
+import com.devtiro.database.domain.dto.BookDto;
 import com.devtiro.database.domain.entities.AuthorEntity;
 import com.devtiro.database.domain.entities.BookEntity;
 
 public final class TestDataUtil {
     private TestDataUtil(){}
 
-    public static AuthorEntity createTestAuthorA() {
+    public static AuthorEntity createTestAuthorEntityA() {
         return AuthorEntity.builder()
                 .id(1L)
                 .name("Zygmunt Krasicki")
@@ -14,7 +16,7 @@ public final class TestDataUtil {
                 .build();
     }
 
-    public static AuthorEntity createTestAuthorB() {
+    public static AuthorEntity createTestAuthorEntityB() {
         return AuthorEntity.builder()
                 .id(2L)
                 .name("Stanislaw Wyspianski")
@@ -22,7 +24,7 @@ public final class TestDataUtil {
                 .build();
     }
 
-    public static AuthorEntity createTestAuthorC() {
+    public static AuthorEntity createTestAuthorEntityC() {
         return AuthorEntity.builder()
                 .id(3L)
                 .name("Boleslaw Prus")
@@ -30,7 +32,7 @@ public final class TestDataUtil {
                 .build();
     }
 
-    public static BookEntity createTestBookA(final AuthorEntity authorEntity) {
+    public static BookEntity createTestBookEntityA(final AuthorEntity authorEntity) {
         return BookEntity.builder()
                 .isbn("978-1-2345-6789-0")
                 .title("Nie-boska komedia")
@@ -38,7 +40,7 @@ public final class TestDataUtil {
                 .build();
     }
 
-    public static BookEntity createTestBookB(final AuthorEntity authorEntity) {
+    public static BookEntity createTestBookEntityB(final AuthorEntity authorEntity) {
         return BookEntity.builder()
                 .isbn("123-4-5678-3764-0")
                 .title("Wesele")
@@ -46,11 +48,35 @@ public final class TestDataUtil {
                 .build();
     }
 
-    public static BookEntity createTestBookC(final AuthorEntity authorEntity) {
+    public static BookEntity createTestBookEntityC(final AuthorEntity authorEntity) {
         return BookEntity.builder()
                 .isbn("734-2-4551-9934-0")
                 .title("Lalka")
                 .authorEntity(authorEntity)
+                .build();
+    }
+
+    public static BookDto createTestBookDtoA(final AuthorDto authorDto) {
+        return BookDto.builder()
+                .isbn("978-1-2345-6789-0")
+                .title("Nie-boska komedia")
+                .author(authorDto)
+                .build();
+    }
+
+    public static BookDto createTestBookDtoB(final AuthorDto authorDto) {
+        return BookDto.builder()
+                .isbn("123-4-5678-3764-0")
+                .title("Wesele")
+                .author(authorDto)
+                .build();
+    }
+
+    public static BookDto createTestBookDtoC(final AuthorDto authorDto) {
+        return BookDto.builder()
+                .isbn("734-2-4551-9934-0")
+                .title("Lalka")
+                .author(authorDto)
                 .build();
     }
 }
