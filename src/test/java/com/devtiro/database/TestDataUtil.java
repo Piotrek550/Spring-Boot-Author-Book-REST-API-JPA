@@ -1,56 +1,56 @@
 package com.devtiro.database;
 
-import com.devtiro.database.domain.Author;
-import com.devtiro.database.domain.Book;
+import com.devtiro.database.domain.entities.AuthorEntity;
+import com.devtiro.database.domain.entities.BookEntity;
 
 public final class TestDataUtil {
     private TestDataUtil(){}
 
-    public static Author createTestAuthorA() {
-        return Author.builder()
+    public static AuthorEntity createTestAuthorA() {
+        return AuthorEntity.builder()
                 .id(1L)
                 .name("Zygmunt Krasicki")
                 .age(60)
                 .build();
     }
 
-    public static Author createTestAuthorB() {
-        return Author.builder()
+    public static AuthorEntity createTestAuthorB() {
+        return AuthorEntity.builder()
                 .id(2L)
                 .name("Stanislaw Wyspianski")
                 .age(55)
                 .build();
     }
 
-    public static Author createTestAuthorC() {
-        return Author.builder()
+    public static AuthorEntity createTestAuthorC() {
+        return AuthorEntity.builder()
                 .id(3L)
                 .name("Boleslaw Prus")
                 .age(47)
                 .build();
     }
 
-    public static Book createTestBookA(final Author author) {
-        return Book.builder()
+    public static BookEntity createTestBookA(final AuthorEntity authorEntity) {
+        return BookEntity.builder()
                 .isbn("978-1-2345-6789-0")
                 .title("Nie-boska komedia")
-                .author(author)
+                .authorEntity(authorEntity)
                 .build();
     }
 
-    public static Book createTestBookB(final Author author) {
-        return Book.builder()
+    public static BookEntity createTestBookB(final AuthorEntity authorEntity) {
+        return BookEntity.builder()
                 .isbn("123-4-5678-3764-0")
                 .title("Wesele")
-                .author(author)
+                .authorEntity(authorEntity)
                 .build();
     }
 
-    public static Book createTestBookC(final Author author) {
-        return Book.builder()
+    public static BookEntity createTestBookC(final AuthorEntity authorEntity) {
+        return BookEntity.builder()
                 .isbn("734-2-4551-9934-0")
                 .title("Lalka")
-                .author(author)
+                .authorEntity(authorEntity)
                 .build();
     }
 }
