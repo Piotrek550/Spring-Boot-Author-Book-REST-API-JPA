@@ -25,16 +25,32 @@ public final class TestDataUtil {
     public static Author createTestAuthorC() {
         return Author.builder()
                 .id(3L)
-                .name("SBoleslaw Prus")
+                .name("Boleslaw Prus")
                 .age(47)
                 .build();
     }
 
-    public static Book createTestBook() {
+    public static Book createTestBookA(final Author author) {
         return Book.builder()
                 .isbn("978-1-2345-6789-0")
                 .title("Nie-boska komedia")
-                .authorId(1L)
+                .author(author)
+                .build();
+    }
+
+    public static Book createTestBookB(final Author author) {
+        return Book.builder()
+                .isbn("123-4-5678-3764-0")
+                .title("Wesele")
+                .author(author)
+                .build();
+    }
+
+    public static Book createTestBookC(final Author author) {
+        return Book.builder()
+                .isbn("734-2-4551-9934-0")
+                .title("Lalka")
+                .author(author)
                 .build();
     }
 }
